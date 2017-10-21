@@ -36,11 +36,13 @@ while not gameExit:
     #Set the background color
     gameDisplay.fill(white)
 
-    #(x,y) = physics.getMotion() put a pin in that
+   
     
-
-    if y < 300:
-        y += 9.8/fps #This will represent 1px as 1m, dividing by fps gives 1s
+    #This needs to be fixed!!!!!
+    if y < 580:
+        yAcceleration = physics.getMotionY()
+        y += 0-(yAcceleration/fps) #This will represent 1px as 1m,
+                                      # dividing by fps gives 1s
       
     
     

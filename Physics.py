@@ -37,16 +37,16 @@ class Physics(object):
         print('The dog pulled with ' + str(result) + ' N of force')
 
 
-    def getMotion():
+    def getMotionY(self):
         """This is the function that will get the sum of forces and calculate the
-            motion of the object"""
+            motion of the object on the y-axis"""
 
         
         self.force.setMass(25)
         
-        motion = self.force.getSumofForces()
+        motionY = self.force.getSumOfForcesY()
         
-        return (motion)
+        return (motionY)
 
 
 
