@@ -14,7 +14,9 @@ gameExit = False #game state
 while not gameExit:
     #for testing events fired in pygame
     for event in pg.event.get(): 
-        print(event)
+        #print(event)#for debugging events
+        if event.type == pg.QUIT:
+            gameExit = True
 
 #End the game and all else
 pg.quit()
