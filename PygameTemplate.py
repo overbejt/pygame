@@ -5,7 +5,7 @@ pg.init()
 #colors
 white = (255,255,255)
 black = (0,0,0)
-red = (2550,0)
+red = (255,0,0)
 
 gameDisplay = pg.display.set_mode((800,600)) #Set screen size here
 
@@ -25,7 +25,9 @@ while not gameExit:
 
     #Set the background color
     gameDisplay.fill(white)
-    pg.display.update()
+    #making a rectangle/image/whatever
+    pg.draw.rect(gameDisplay, red, [400,300,20,20])
+    pg.display.update()#update the display, goes last, always
 
 #End the game and all else
 pg.quit()
