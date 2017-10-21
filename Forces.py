@@ -13,16 +13,24 @@ class Forces(object):
     """
 
     def __init__(self):
-        self.gravity = 9.8 #initialized as earth's gravity in m/s^2
+        self.gravity = -9.8 #initialized as earth's gravity in m/s^2
         self.tension = 0.0 #in N
+        self.mass = 0.0 #in kg
 
-    def getGravitationalForce(self, mass):
+    def getGravitationalForce(self):
         """Returns the gravitational force on an object"""
-        return self.gravity*mass
+        self.mass = mass
+        return self.gravity*self.mass
 
     def setGravity(self, inGravity):
         """Sets the gravitational force of a planet"""
         self.gravity = inGravity
+
+    def setMass(self, inMass):
+        self.mass = inMass
+
+    def getMass(self):
+        return self.mass
 
     def setTensionForce(self, inTension):
         """Sets the tension force of a massless/weightless rope"""
@@ -31,5 +39,13 @@ class Forces(object):
     def getTensionForce(self):
         """Returns the tension force of a massless/weightless rope"""
         return self.tension
+
+    def getSumofForces():
+        """This is the function that will return acceleration of the sum
+            of forces as a twopal in the form of (x,y)"""
+        ##For now I will only apply gravitational force
+        x = 0.0 #in m/s^2
+        y = self.getGravitationalForce()
+        return (x,y)
 
 

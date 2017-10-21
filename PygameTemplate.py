@@ -1,4 +1,7 @@
 import pygame as pg
+from Physics import Physics
+
+physics = Physics()
 
 pg.init()
 
@@ -6,6 +9,9 @@ pg.init()
 white = (255,255,255)
 black = (0,0,0)
 red = (255,0,0)
+
+y = 20
+x = 20
 
 gameDisplay = pg.display.set_mode((800,600)) #Set screen size here
 
@@ -25,8 +31,17 @@ while not gameExit:
 
     #Set the background color
     gameDisplay.fill(white)
+
+    #(x,y) = physics.getMotion() put a pin in that
+    
+
+    if y < 300:
+        y += .02
+      
+    
+    
     #making a rectangle/image/whatever
-    pg.draw.rect(gameDisplay, red, [400,300,20,20])
+    pg.draw.rect(gameDisplay, red, [400,y,20,20])
     pg.display.update()#update the display, goes last, always
 
 #End the game and all else
