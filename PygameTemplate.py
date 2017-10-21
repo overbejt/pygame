@@ -1,10 +1,21 @@
-import pygame
+import pygame as pg
 
-pygame.init()
+pg.init()
 
-gameDisplay = pygame.display.set_mode((800,600))
+gameDisplay = pg.display.set_mode((800,600)) #Set screen size here
 
-pygame.display.update()
+pg.display.set_caption('Title goes here') #Insert title here
 
-pygame.quit()
+pg.display.update() #update the window here
+
+gameExit = False #game state
+
+#game loop
+while not gameExit:
+    #for testing events fired in pygame
+    for event in pg.event.get(): 
+        print(event)
+
+#End the game and all else
+pg.quit()
 quit()
