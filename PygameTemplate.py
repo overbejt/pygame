@@ -2,6 +2,11 @@ import pygame as pg
 
 pg.init()
 
+#colors
+white = (255,255,255)
+black = (0,0,0)
+red = (2550,0)
+
 gameDisplay = pg.display.set_mode((800,600)) #Set screen size here
 
 pg.display.set_caption('Title goes here') #Insert title here
@@ -17,6 +22,10 @@ while not gameExit:
         #print(event)#for debugging events
         if event.type == pg.QUIT:
             gameExit = True
+
+    #Set the background color
+    gameDisplay.fill(white)
+    pg.display.update()
 
 #End the game and all else
 pg.quit()
