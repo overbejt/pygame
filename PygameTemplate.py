@@ -39,7 +39,7 @@ while not gameExit:
    
     
     #This needs to be fixed!!!!!
-    if y < 580:
+    if y < 500:
         yAcceleration = physics.getMotionY()
         y += 0-(yAcceleration/fps) #This will represent 1px as 1m,
                                       # dividing by fps gives 1s
