@@ -5,6 +5,10 @@ physics = Physics()
 
 pg.init()
 
+#fps
+fps = 60
+clock = pg.time.Clock()
+
 #colors
 white = (255,255,255)
 black = (0,0,0)
@@ -36,13 +40,15 @@ while not gameExit:
     
 
     if y < 300:
-        y += .02
+        y += 9.8/fps #This will represent 1px as 1m, dividing by fps gives 1s
       
     
     
     #making a rectangle/image/whatever
     pg.draw.rect(gameDisplay, red, [400,y,20,20])
     pg.display.update()#update the display, goes last, always
+
+    clock.tick(fps)
 
 #End the game and all else
 pg.quit()
